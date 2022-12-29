@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:masterclass_app/shared/theme/theme_manager.dart';
-import 'package:masterclass_app/shared/theme/themes.dart';
 
 class MyBottomNavigationBar extends StatelessWidget {
   const MyBottomNavigationBar({
@@ -14,19 +13,6 @@ class MyBottomNavigationBar extends StatelessWidget {
   final int currentPage;
   final PageController pageController;
   final ThemeManager themeManager;
-
-  Color svgColor(ThemeManager themeManager, int page) {
-    if (themeManager.themeMode == ThemeMode.light) {
-      if (currentPage == page) {
-        return SVGThemeData.lightIsSelected.color;
-      }
-      return SVGThemeData.lightIsUnselected.color;
-    }
-    if (currentPage == page) {
-      return SVGThemeData.darkIsSelected.color;
-    }
-    return SVGThemeData.darkIsUnselected.color;
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -45,7 +31,7 @@ class MyBottomNavigationBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'assets/images/home/Icon feather-target.svg',
-            color: svgColor(themeManager, 0),
+            color: themeManager.svgColor(themeManager, 0, currentPage),
             height: 20,
           ),
           label: 'Atividades',
@@ -53,7 +39,7 @@ class MyBottomNavigationBar extends StatelessWidget {
         BottomNavigationBarItem(
           icon: SvgPicture.asset(
             'assets/images/home/Icon awesome-github.svg',
-            color: svgColor(themeManager, 1),
+            color: themeManager.svgColor(themeManager, 1, currentPage),
             height: 20,
           ),
           label: 'Repositórios',

@@ -1,0 +1,9 @@
+export 'package:masterclass_app/view/home/components/app_bar.dart';
+export 'package:masterclass_app/view/home/components/card.dart';
+export 'package:masterclass_app/view/home/components/cardAbout.dart';
+export 'package:masterclass_app/view/home/components/fav_tec.dart';
+export 'package:masterclass_app/view/home/components/habil_and_compe.dart';
+export 'package:masterclass_app/view/home/components/my_bottom_navigation_bar.dart';
+export 'package:masterclass_app/view/home/components/tec_card.dart';
+export 'package:masterclass_app/view/home/components/about_dev_page.dart';
+export 'package:masterclass_app/view/home/components/exercice_category.dart';
